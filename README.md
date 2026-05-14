@@ -1,36 +1,246 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PeerGrid
 
-## Getting Started
+PeerGrid is a modern student-focused social platform built for ambitious college students, builders, hackers, and startup-minded communities.
 
-First, run the development server:
+The platform allows students to explore real college culture, showcase projects, connect with like-minded peers, and learn from verified student experiences.
+
+---
+
+# Vision
+
+PeerGrid aims to become the digital ecosystem for ambitious students where people can:
+
+- build together
+- learn publicly
+- discover opportunities
+- showcase projects
+- network with peers
+- explore real college culture
+
+---
+
+# Core Concept
+
+Anyone can:
+
+- explore colleges
+- read reviews
+- view student projects
+- browse student profiles
+- discover communities
+
+Only verified students from listed colleges can:
+
+- create posts
+- review their college
+- upload projects
+- participate in communities
+- guide juniors
+
+This creates a trusted and authentic student ecosystem.
+
+---
+
+# Main Features
+
+## Student Feed
+
+A modern social feed where students share:
+
+- coding journeys
+- projects
+- hackathon wins
+- resources
+- startup ideas
+- achievements
+
+---
+
+## College Pages
+
+Each college includes:
+
+- student feed
+- verified reviews
+- projects
+- coding culture insights
+- peer ecosystem
+
+---
+
+## Student Profiles
+
+Profiles showcase:
+
+- skills
+- tech stack
+- projects
+- achievements
+- interests
+- learning journey
+
+---
+
+## Communities
+
+Students can join communities like:
+
+- Web Development
+- AI/ML
+- Open Source
+- Startups
+- Hackathons
+
+---
+
+## Verification System
+
+Only verified students can post content.
+
+Verification methods:
+
+- college email
+- student ID verification
+
+---
+
+# Tech Stack
+
+## Frontend
+
+- Next.js
+- React
+- Tailwind CSS
+
+## Backend
+
+- Supabase
+
+## Deployment
+
+- Vercel
+
+---
+
+# Design System
+
+PeerGrid uses a modern premium dark theme inspired by:
+
+- Linear
+- Vercel
+- Raycast
+- modern SaaS products
+
+### Brand Colors
+
+| Purpose          | Color   |
+| ---------------- | ------- |
+| Background       | #070B14 |
+| Primary Text     | #F5F7FA |
+| Primary Accent   | #6C63FF |
+| Secondary Accent | #4FD1C5 |
+
+---
+
+# Folder Structure
+
+```bash
+app/
+│
+├── auth/
+├── colleges/
+├── profile/
+├── feed/
+├── projects/
+├── community/
+├── admin/
+│
+├── components/
+│   ├── layout/
+│   ├── feed/
+│   ├── post/
+│   ├── profile/
+│   ├── college/
+│   ├── community/
+│   └── common/
+│
+├── services/
+├── lib/
+├── data/
+├── styles/
+└── types/
+```
+
+---
+
+# Setup
+
+## Clone Repository
+
+```bash
+git clone <your-repo-url>
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Install Supabase Client
+
+```bash
+npm install @supabase/supabase-js
+```
+
+---
+
+## Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Future Goals
 
-To learn more about Next.js, take a look at the following resources:
+- AI-powered recommendations
+- Hackathon teammate matching
+- Internship opportunities
+- Student startup networking
+- Real-time chat system
+- Cross-college collaboration
+- Project discovery ecosystem
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Inspiration
 
-## Deploy on Vercel
+PeerGrid is inspired by:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- LinkedIn
+- Reddit
+- Discord
+- Linear
+- modern startup communities
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+But focused specifically on:
+
+> ambitious student builders and modern tech campuses.
+
+---
+
+# Status
+
+Currently in MVP development phase.
