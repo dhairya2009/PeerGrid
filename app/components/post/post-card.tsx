@@ -38,7 +38,7 @@ function PostCard({ post }: PostCardProps) {
   }
 
   return (
-    <div className="w-full bg-[#0b0f17] text-white p-5 rounded-2xl border border-[#6974892d] font-sans shadow-lg">
+    <div className="w-full bg-[#0b0f17] text-white p-5 rounded-2xl border border-[#6974892d] font-sans shadow-lg duration-500 hover:border-[#302f6a]">
       {/* --- HEADER SECTION --- */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
@@ -62,9 +62,9 @@ function PostCard({ post }: PostCardProps) {
         </div>
 
         {/* Right Badge & Menu */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center">
           {post.tag_label && (
-            <span className="text-[12px] font-medium text-[#00bfa5] bg-[#00bfa510] border border-[#00bfa533] px-3 py-1 rounded-xl">
+            <span className="xl:block hidden text-[12px] font-medium text-[#00bfa5] bg-[#00bfa510] border border-[#00bfa533] px-3 py-1 rounded-xl">
               {post.tag_label}
             </span>
           )}

@@ -32,7 +32,7 @@ const LIST_ITEM_CLASS =
 
 function RightSidebar() {
   return (
-    <div className="w-1/5 flex flex-col gap-3">
+    <div className="xl:w-1/5 xl:flex lg:hidden hidden flex-col gap-3">
       {/* --- TRENDING COLLEGES --- */}
       <div className={CARD_CLASS}>
         <div className="text-[13px] text-[#697489] flex font-semibold items-center">

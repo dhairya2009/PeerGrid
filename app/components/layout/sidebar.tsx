@@ -7,15 +7,16 @@ import {
 import { RxPeople } from "react-icons/rx";
 import { CiBookmark } from "react-icons/ci";
 import { BiBuildings } from "react-icons/bi";
+import Link from "next/link";
 
 // 1. Move navigation links to a config array
 const NAV_LINKS = [
-  { name: "Home", icon: <IoHomeOutline /> },
-  { name: "Explore Colleges", icon: <BiBuildings /> },
-  { name: "Communities", icon: <RxPeople /> },
-  { name: "Projects", icon: <IoFolderOpenOutline /> },
-  { name: "Saved", icon: <CiBookmark /> },
-  { name: "Setting", icon: <IoSettingsOutline /> },
+  { name: "Home", redirectlink: "/feed", icon: <IoHomeOutline /> },
+  { name: "Explore Colleges", redirectlink: "/colleges", icon: <BiBuildings /> },
+  { name: "Communities", redirectlink: "/community", icon: <RxPeople /> },
+  { name: "Projects", redirectlink: "/projects", icon: <IoFolderOpenOutline /> },
+  { name: "Saved", redirectlink: "/", icon: <CiBookmark /> },
+  { name: "Setting", redirectlink: "/settings", icon: <IoSettingsOutline /> },
 ];
 
 // 2. Move skills list to an array
@@ -27,7 +28,7 @@ const CARD_BASE_CLASS =
 
 function Sidebar() {
   return (
-    <div className="w-1/5 flex flex-col gap-3">
+    <div className="xl:w-1/5 xl:flex lg:w-1/5 lg:flex hidden flex-col gap-3">
       {/* --- PROFILE CARD --- */}
       <div className={`${CARD_BASE_CLASS} p-3 flex flex-col`}>
         <div className="flex mb-3">
@@ -68,13 +69,15 @@ function Sidebar() {
       {/* --- ROUTES CARD --- */}
       <div className={`${CARD_BASE_CLASS} p-1`}>
         {NAV_LINKS.map((link) => (
-          <div
-            key={link.name}
-            className="flex bg-cardbg text-[#697489] px-4 py-3 rounded-xl m-1 text-[13px] font-semibold hover:text-white hover:bg-[#1a1e27] hover:cursor-pointer duration-300"
-          >
-            <div className="flex items-center mr-2">{link.icon}</div>
-            {link.name}
-          </div>
+          <Link key={link.name} href={link.redirectlink}>
+            <div
+              key={link.name}
+              className="flex bg-cardbg text-[#697489] px-4 py-3 rounded-xl m-1 text-[13px] font-semibold hover:text-white hover:bg-[#1a1e27] hover:cursor-pointer duration-300"
+            >
+              <div className="flex items-center mr-2">{link.icon}</div>
+              {link.name}
+            </div>
+          </Link>
         ))}
       </div>
 
