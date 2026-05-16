@@ -26,6 +26,7 @@ interface PostCardProps {
 
 function PostCard({ post }: PostCardProps) {
   const [like, setlike] = useState(post.likes.is_liked);
+  const [saved, setsaved] = useState(post.is_saved);
   const [likeno, setlikeno] = useState(post.likes.count);
 
   function likefnc() {
@@ -35,6 +36,14 @@ function PostCard({ post }: PostCardProps) {
     } else {
       setlike(true);
       setlikeno(likeno + 1);
+    }
+  }
+
+  function savefnc() {
+    if (saved == true) {
+      setsaved(false);
+    } else {
+      setsaved(true);
     }
   }
 
@@ -109,16 +118,13 @@ function PostCard({ post }: PostCardProps) {
           {/* Save Bookmark Button */}
           <button
             className={`p-2 rounded-xl transition duration-300 ${
-              post.is_saved
+              saved
                 ? "bg-[#312e8133] text-[#818cf8]"
                 : "bg-[#1a1e27] text-[#697489] hover:text-white"
             }`}
+            onClick={savefnc}
           >
-            {post.is_saved ? (
-              <BsBookmarkFill size={15} />
-            ) : (
-              <BsBookmark size={15} />
-            )}
+            {saved ? <BsBookmarkFill size={15} /> : <BsBookmark size={15} />}
           </button>
         </div>
       </div>

@@ -12,6 +12,8 @@ import { BiBuildings } from "react-icons/bi";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsPostcardHeart } from "react-icons/bs";
+import Image from "next/image";
+import logo from "@/public/logo.jpeg"
 
 // 1. Move navigation links to a config array
 const NAV_LINKS = [
@@ -50,10 +52,12 @@ function Sidebar() {
         transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Link href="/profile">
-          <div className={`${CARD_BASE_CLASS} p-3 flex flex-col hover:border-[#302f6a]`}>
+          <div
+            className={`${CARD_BASE_CLASS} p-3 flex flex-col hover:border-[#302f6a]`}
+          >
             <div className="flex mb-3">
-              <div className="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-[12px] border-2 border-[#302f6a]">
-                AM
+              <div className="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-[12px] border-2 border-[#302f6a] overflow-hidden">
+                <Image alt="AM" className="bg-red-500 w-full h-full object-cover" src={logo} />
               </div>
               <div className="ml-3">
                 <div>Aarva Metha</div>
