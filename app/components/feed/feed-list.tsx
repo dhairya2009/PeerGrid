@@ -1,5 +1,5 @@
 import React from "react";
-import { posts } from "@/app/data/dummy-data";
+import { posts } from "@/app/data/post_dummy_data";
 import PostCard from "@/app/components/post/post-card";
 
 function FeedList() {
