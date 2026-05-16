@@ -11,10 +11,12 @@ import { CiBookmark } from "react-icons/ci";
 import { BiBuildings } from "react-icons/bi";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { BsPostcardHeart } from "react-icons/bs";
 
 // 1. Move navigation links to a config array
 const NAV_LINKS = [
   { name: "Home", redirectlink: "/", icon: <IoHomeOutline /> },
+  { name: "Feed", redirectlink: "/feed", icon: <BsPostcardHeart /> },
   {
     name: "Explore Colleges",
     redirectlink: "/colleges",
@@ -35,11 +37,11 @@ const SKILLS = ["React JS", "Next JS", "Python", "Typescript", "Node JS"];
 
 // Reusable styling classes to avoid repeating walls of text
 const CARD_BASE_CLASS =
-  "bg-cardbg rounded-2xl border-[#6974892d] border-1 duration-500 hover:border-[#302f6a]";
+  "bg-cardbg rounded-2xl border-[#6974892d] border-1 duration-500";
 
 function Sidebar() {
   return (
-    <div className="xl:w-1/5 xl:flex lg:w-2/7 lg:flex hidden flex-col gap-3">
+    <div className="xl:w-1/5 xl:flex lg:w-2/7 lg:flex hidden flex-col gap-3 ">
       {/* --- PROFILE CARD --- */}
       <motion.div
         initial={{ opacity: 0, x: -30 }} // Start low and invisible
@@ -48,7 +50,7 @@ function Sidebar() {
         transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Link href="/profile">
-          <div className={`${CARD_BASE_CLASS} p-3 flex flex-col`}>
+          <div className={`${CARD_BASE_CLASS} p-3 flex flex-col hover:border-[#302f6a]`}>
             <div className="flex mb-3">
               <div className="bg-primary rounded-full w-10 h-10 flex items-center justify-center text-[12px] border-2 border-[#302f6a]">
                 AM

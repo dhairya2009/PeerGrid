@@ -45,7 +45,7 @@ function PostCard({ post }: PostCardProps) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, ease: "easeIn" }}
     >
-      <div className="w-full bg-[#0b0f17] text-white p-5 rounded-2xl border border-[#6974892d] font-sans shadow-lg duration-500 hover:border-[#302f6a]">
+      <div className="w-full bg-[#0b0f17] text-white p-5 rounded-2xl border border-y-[#6974892d] border-x-0 font-sans shadow-lg duration-500 hover:border-[#302f6a]">
         {/* --- HEADER SECTION --- */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
