@@ -15,3 +15,7 @@
 
     --color-cardbg: #121621;
 }
+
+*{
+    scroll-behavior: smooth;
+}

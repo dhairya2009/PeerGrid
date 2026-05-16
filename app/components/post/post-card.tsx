@@ -6,6 +6,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { LuShare2 } from "react-icons/lu";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 interface PostCardProps {
   post: {
@@ -38,83 +39,90 @@ function PostCard({ post }: PostCardProps) {
   }
 
   return (
-    <div className="w-full bg-[#0b0f17] text-white p-5 rounded-2xl border border-[#6974892d] font-sans shadow-lg duration-500 hover:border-[#302f6a]">
-      {/* --- HEADER SECTION --- */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          {/* Avatar */}
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-sm text-font border-2 border-[#302f6a]">
-            {post.logo_text}
-          </div>
-
-          {/* User Meta */}
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-[15px]">{post.name}</span>
-              <span className="text-[10px] font-bold bg-[#1e1b4b] text-[#818cf8] border border-[#312e81] px-1.5 py-0.5 rounded-md uppercase">
-                {post.college}
-              </span>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }} // Start low and invisible
+      whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, ease: "easeIn" }}
+    >
+      <div className="w-full bg-[#0b0f17] text-white p-5 rounded-2xl border border-[#6974892d] font-sans shadow-lg duration-500 hover:border-[#302f6a]">
+        {/* --- HEADER SECTION --- */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            {/* Avatar */}
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-sm text-font border-2 border-[#302f6a]">
+              {post.logo_text}
             </div>
-            <p className="text-[12px] text-[#697489] mt-0.5">
-              {post.course} · {post.year} · {post.time_uploaded}
-            </p>
+
+            {/* User Meta */}
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-[15px]">{post.name}</span>
+                <span className="text-[10px] font-bold bg-[#1e1b4b] text-[#818cf8] border border-[#312e81] px-1.5 py-0.5 rounded-md uppercase">
+                  {post.college}
+                </span>
+              </div>
+              <p className="text-[12px] text-[#697489] mt-0.5">
+                {post.course} · {post.year} · {post.time_uploaded}
+              </p>
+            </div>
+          </div>
+
+          {/* Right Badge & Menu */}
+          <div className="flex items-center">
+            {post.tag_label && (
+              <span className="xl:block hidden text-[12px] font-medium text-[#00bfa5] bg-[#00bfa510] border border-[#00bfa533] px-3 py-1 rounded-xl">
+                {post.tag_label}
+              </span>
+            )}
           </div>
         </div>
 
-        {/* Right Badge & Menu */}
-        <div className="flex items-center">
-          {post.tag_label && (
-            <span className="xl:block hidden text-[12px] font-medium text-[#00bfa5] bg-[#00bfa510] border border-[#00bfa533] px-3 py-1 rounded-xl">
-              {post.tag_label}
-            </span>
-          )}
+        {/* --- CONTENT SECTION --- */}
+        <div className="text-[14px] text-gray-200 leading-relaxed pl-1 pr-4 mb-5 whitespace-pre-line pre-wrap">
+          {post.post_content}
         </div>
-      </div>
 
-      {/* --- CONTENT SECTION --- */}
-      <div className="text-[14px] text-gray-200 leading-relaxed pl-1 pr-4 mb-5 whitespace-pre-line pre-wrap">
-        {post.post_content}
-      </div>
+        {/* --- ACTION FOOTER BAR --- */}
+        <div className="flex items-center justify-between border-t border-[#1e293b]/60 pt-3.5 mt-2">
+          <div className="flex items-center gap-4">
+            {/* Likes Button */}
+            <button
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[12px] font-medium transition duration-300 ${
+                like
+                  ? "bg-[#e11d4815] text-[#f43f5e]"
+                  : "bg-[#1a1e27] text-[#697489] hover:text-white"
+              }`}
+              onClick={likefnc}
+            >
+              {like ? <AiFillHeart size={16} /> : <AiOutlineHeart size={16} />}
+              <span>{likeno}</span>
+            </button>
 
-      {/* --- ACTION FOOTER BAR --- */}
-      <div className="flex items-center justify-between border-t border-[#1e293b]/60 pt-3.5 mt-2">
-        <div className="flex items-center gap-4">
-          {/* Likes Button */}
-          <button
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[12px] font-medium transition duration-300 ${
-              like
-                ? "bg-[#e11d4815] text-[#f43f5e]"
-                : "bg-[#1a1e27] text-[#697489] hover:text-white"
-            }`}
-            onClick={likefnc}
-          >
-            {like ? <AiFillHeart size={16} /> : <AiOutlineHeart size={16} />}
-            <span>{likeno}</span>
-          </button>
-
-          {/* Comments Button
+            {/* Comments Button
           <button className="flex items-center gap-1.5 bg-[#1a1e27] text-[#697489] hover:text-white px-3 py-1.5 rounded-xl text-[12px] font-medium transition duration-300">
             <BiMessageRounded size={16} />
             <span>{post.comments}</span>
           </button> */}
-        </div>
+          </div>
 
-        {/* Save Bookmark Button */}
-        <button
-          className={`p-2 rounded-xl transition duration-300 ${
-            post.is_saved
-              ? "bg-[#312e8133] text-[#818cf8]"
-              : "bg-[#1a1e27] text-[#697489] hover:text-white"
-          }`}
-        >
-          {post.is_saved ? (
-            <BsBookmarkFill size={15} />
-          ) : (
-            <BsBookmark size={15} />
-          )}
-        </button>
+          {/* Save Bookmark Button */}
+          <button
+            className={`p-2 rounded-xl transition duration-300 ${
+              post.is_saved
+                ? "bg-[#312e8133] text-[#818cf8]"
+                : "bg-[#1a1e27] text-[#697489] hover:text-white"
+            }`}
+          >
+            {post.is_saved ? (
+              <BsBookmarkFill size={15} />
+            ) : (
+              <BsBookmark size={15} />
+            )}
+          </button>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
