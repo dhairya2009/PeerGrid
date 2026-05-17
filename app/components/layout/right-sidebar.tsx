@@ -37,12 +37,12 @@ function RightSidebar() {
   return (
     <div className="xl:w-1/5 xl:flex lg:hidden hidden flex-col gap-3">
       {/* --- TRENDING COLLEGES --- */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: +30 }} // Start low and invisible
         whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.4, ease: "easeIn" }}
-      >
+      > */}
         <div className={CARD_CLASS}>
           <div className="text-[13px] text-[#697489] flex font-semibold items-center">
             <div className="mx-2 text-primary text-[15px]">
@@ -67,14 +67,14 @@ function RightSidebar() {
             ))}
           </div>
         </div>
-      </motion.div>
+      {/* </motion.div> */}
       {/* --- COMMUNITIES --- */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: +30 }} // Start low and invisible
         whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, ease: "easeIn" }}
-      >
+      > */}
         <div className={CARD_CLASS}>
           <div className="text-[13px] text-[#697489] flex font-semibold items-center">
             <div className="mx-2 text-primary text-[15px]">
@@ -105,7 +105,7 @@ function RightSidebar() {
             <Link href="/community">SEE ALL</Link>
           </div>
         </div>
-      </motion.div>
+      {/* </motion.div> */}
     </div>
   );
 }

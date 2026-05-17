@@ -13,7 +13,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsPostcardHeart } from "react-icons/bs";
 import Image from "next/image";
-import logo from "@/public/logo.jpeg"
+import logo from "@/public/profilepic.jpeg"
 
 // 1. Move navigation links to a config array
 const NAV_LINKS = [
@@ -45,12 +45,12 @@ function Sidebar() {
   return (
     <div className="xl:w-1/5 xl:flex lg:w-2/7 lg:flex hidden flex-col gap-3 ">
       {/* --- PROFILE CARD --- */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -30 }} // Start low and invisible
         whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.4, ease: "easeIn" }}
-      >
+      > */}
         <Link href="/profile">
           <div
             className={`${CARD_BASE_CLASS} p-3 flex flex-col hover:border-[#302f6a]`}
@@ -92,14 +92,14 @@ function Sidebar() {
             </div>
           </div>
         </Link>
-      </motion.div>
+      {/* </motion.div> */}
       {/* --- ROUTES CARD --- */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -30 }} // Start low and invisible
         whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, ease: "easeIn" }}
-      >
+      > */}
         <div className={`${CARD_BASE_CLASS} p-1`}>
           {NAV_LINKS.map((link) => (
             <Link key={link.name} href={link.redirectlink}>
@@ -113,14 +113,14 @@ function Sidebar() {
             </Link>
           ))}
         </div>
-      </motion.div>
+      {/* </motion.div> */}
       {/* --- SKILLS CARD --- */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -30 }} // Start low and invisible
         whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: "easeIn" }}
-      >
+      > */}
         <div className="bg-cardbg p-4 rounded-2xl border-[#6974892d] border-1">
           <div className="text-[#697489] text-[12px] mb-2">SKILLS</div>
           <div className="flex flex-wrap gap-2">
@@ -134,7 +134,7 @@ function Sidebar() {
             ))}
           </div>
         </div>
-      </motion.div>
+      {/* </motion.div> */}
     </div>
   );
 }

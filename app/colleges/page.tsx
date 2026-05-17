@@ -12,7 +12,7 @@ function page() {
         <div className="flex justify-between xl:w-2/3 w-full gap-5 mx-4">
           <Sidebar />
           <Feed />
-          <Rightsidebar />  
+          <Rightsidebar />
         </div>
       </div>
     </div>

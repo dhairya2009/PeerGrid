@@ -1,4 +1,4 @@
-export const collages = [
+export const colleges = [
   {
     id: "a7K9x2M5pQ1w",
     name: "Newton School of Technology",
@@ -13,8 +13,8 @@ export const collages = [
     rating_facultys: 8.8,
     rating_campus_life: 8.5,
     rating_overall: 4.8,
-    images: "https://example.com/images/newton_school_campus.jpg",
-    logo: "https://example.com/images/newton_school_logo.jpg",
+    images: "/nstcampus.avif",
+    logo: "/nstlogo.jpg",
   },
   {
     id: "4bN8v6T1zY3m",
@@ -30,8 +30,8 @@ export const collages = [
     rating_facultys: 9.3,
     rating_campus_life: 8.9,
     rating_overall: 4.6,
-    images: "https://example.com/images/plaksha_campus.jpg",
-    logo: "https://example.com/images/plaksha_logo.jpg",
+    images: "/plakshacampus.jpg",
+    logo: "/plaksha.jpg",
   },
   {
     id: "9fR2w4L7jK5s",
@@ -47,7 +47,7 @@ export const collages = [
     rating_facultys: 9.1,
     rating_campus_life: 8.2,
     rating_overall: 4.7,
-    images: "https://example.com/images/scaler_campus.jpg",
-    logo: "https://example.com/images/scaler_logo.jpg",
-  },
+    images: "/sclaercampus.avif",
+    logo: "/scaler.jpg",
+  }
 ];
